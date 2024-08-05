@@ -1,0 +1,147 @@
+body {
+    transition: background-color 0.3s, color 0.3s;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+#header {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 1000;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+#header.hidden {
+    transform: translateY(-100%);
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    transition: background-color 0.3s;
+}
+
+h1 {
+    font-size: 2.5rem;
+    transition: color 0.3s;
+}
+
+button.btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: color 0.3s, background-color 0.3s, border 0.3s;
+}
+
+button.btn i {
+    transition: color 0.3s;
+}
+
+.collapsible-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.collapsible-header h5 {
+    margin: 0;
+    color: #C35839;
+    flex: 1;
+}
+
+.collapsible-header .checkbox-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.checkbox-container input[type="checkbox"] {
+    appearance: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    position: relative;
+}
+
+.checkbox-container input[type="checkbox"]:checked {
+    background-color: #2196F3;
+    border: none;
+}
+
+.checkbox-container input[type="checkbox"]:checked::before {
+    content: '\f00c';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.quill-editor {
+    height: 150px;
+    overflow-y: auto;
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #C35839;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-to-top i {
+    font-size: 1.5rem;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .collapsible-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .collapsible-header h5 {
+        font-size: 1rem;
+    }
+
+    .checkbox-container {
+        justify-content: flex-start;
+    }
+
+    button.btn {
+        font-size: 1.2rem;
+    }
+}
